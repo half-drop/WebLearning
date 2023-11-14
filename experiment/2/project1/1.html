@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>简易灯箱画廊设计</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .div1 {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: #33cc99;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+        }
+
+        ul {
+            margin: 0 auto;
+            width: 800px;
+            list-style-type: none;
+            height: 120px;
+        }
+
+        li {
+            float: left;
+            width: 110px;
+            height: 90px;
+            margin: 5px;
+        }
+
+        img {
+            border: 0;
+            width: 100px;
+            height: 80px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:link, a:visited, a:active {
+            color: #0033cc;
+        }
+
+        a:hover {
+            border-bottom: 4px solid #ff0000;
+        }
+
+        hr {
+            background: red;
+            border: 0;
+            height: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <h3>简易灯箱画廊设计</h3>
+    <hr>
+    <ul>
+        <li><a href="t1.jpg" target="main_iframe">t1<br><img src="t1.jpg" alt="1"></a></li>
+        <li><a href="t2.jpg" target="main_iframe">t2<br><img src="t2.jpg" alt="2"></a></li>
+        <li><a href="t3.jpg" target="main_iframe">t3<br><img src="t3.jpg" alt="3"></a></li>
+        <li><a href="t4.jpg" target="main_iframe">t4<br><img src="t4.jpg" alt="4"></a></li>
+        <li><a href="t5.jpg" target="main_iframe">t5<br><img src="t5.jpg" alt="5"></a></li>
+    </ul>
+    <iframe src="t1.jpg" name="main_iframe" width="500" height="300"></iframe>
+</div>
+</body>
+</html>
