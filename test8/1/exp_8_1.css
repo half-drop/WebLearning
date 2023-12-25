@@ -1,0 +1,50 @@
+li {
+    font-size: 36px;
+    width: 190px;
+    display: inline;
+}
+
+.Hao {
+    color: red;
+    font-size: 46px;
+    font-family: 隶书;
+}
+
+#color1 {
+    color: blue;
+}
+
+#color2 {
+    color: #AA007F;
+}
+
+#color3 {
+    color: #0000DD;
+}
+
+#color4 {
+    color: #FFAA00;
+}
+
+#color5 {
+    color: #550000;
+}
+
+#color6 {
+    color: #55FF00;
+}
+
+#container {
+    background: #FAFAFA;
+    width: 643px;
+    height: 285px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    width: 643px;
+}
+

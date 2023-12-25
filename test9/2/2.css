@@ -1,0 +1,43 @@
+h1 {
+    background: #FEF2F3;
+    color: red;
+    text-align: center;
+    height: 2em;
+    padding-top: 15px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5em;
+    text-indent: 2em;
+}
+
+p:first-letter {
+    font-weight: bolder;
+    color: red;
+}
+
+p:first-line {
+    font-style: italic;
+    color: blue;
+}
+
+#container {
+    margin: 0 auto;
+    width: 1320px;
+    height: 640px;
+    background-color: #FEFEDD;
+}
+
+img {
+    width: 600px;
+    margin: 10px;
+    height: 460px;
+}
+
+.img {
+    width: 640px;
+    height: 460px;
+    float: left;
+    padding: 10px;
+}

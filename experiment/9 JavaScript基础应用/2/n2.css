@@ -1,0 +1,14 @@
+div {
+	text-align: center;
+	margin: 20px auto;
+	line-height: 1.5em;
+	border: 18px groove #66ff66;
+	width: 560px;
+	height: 260px;
+	font-weight: bold;
+}
+form {
+	margin: 20px auto;
+	padding: 5px;
+}
+

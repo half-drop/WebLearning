@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标动作捕获与响应</title>
+    <style type="text/css">
+        form {
+            text-align: center;
+        }
+        div {
+            background: #00CC99;
+            width: 400px;
+            height: 220px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h3 {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="mybody" onmouseover="mover()" onmouseout="mout()" onclick="mclick()" onmousedown="mdown()" ondblclick="mdclick()">
+    <h3>鼠标动作捕获与响应</h3>
+    <hr style="color: white;">
+    <form name="form1">
+        <input type="text" id="mtext">
+    </form>
+    <img src="image21.jpg" id="image" width="200" height="100" title="图区">
+</div>
+
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function mover() {
+        $("mybody").style.background = "#99CC66";
+        $("image").src = "image22.jpg";  // 切换图像
+    }
+
+    function mout() {
+        $("mybody").style.background = "#00CC99";
+        $("image").src = "image21.jpg";  // 切换图像
+    }
+
+    function mdown() {
+        document.form1.mtext.value = "按下鼠标";
+    }
+
+    function mclick() {
+        document.form1.mtext.value = "单击鼠标";
+        $("mybody").style.background = "#00CCAA";
+        $("image").src = "image23.jpg";  // 切换图像
+    }
+
+    function mdclick() {
+        document.form1.mtext.value = "双击鼠标";
+        $("image").src = "image24.jpg";  // 切换图像
+        $("mybody").style.background = "#AACCFF";
+    }
+</script>
+</body>
+</html>

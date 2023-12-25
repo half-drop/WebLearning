@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>校园办公系统认证页面</title>
+    <style type="text/css">
+        div {
+            margin: 0 auto;
+            padding: 30px 40px 50px;
+            background: #00ff99;
+        }
+        table {
+            border: 2px double #0000ff;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #td1 {
+            text-align: right;
+            font-size: 20px;
+            color: #6600ff;
+        }
+        #td2 {
+            text-align: left;
+        }
+        label {
+            color: red;
+            font-weight: bold;
+        }
+        h3 {
+            background: #0033ff;
+            width: 500px;
+            height: 40px;
+            padding: 8px;
+            font-size: 28px;
+            text-align: center;
+            font-family: '隶书';
+            color: #FFFFFF;
+            margin: 20px auto ;
+        }
+        input {
+            height: 24px;
+        }
+    </style>
+    <script type="text/javascript">
+        function S(id) {
+            return document.getElementById(id);
+        }
+
+        function checkcardno() {
+            var cno = document.myform.cardno.value;
+            if (cno === "" || cno == null) {
+                S("err_cardno").innerHTML = "卡号不能为空!";
+            } else if (cno.length != 10) {
+                S("err_cardno").innerHTML = "卡号长度必须为10!";
+            } else {
+                var firstnum = cno.charAt(0);
+                if (firstnum === "0") {
+                    S("err_cardno").innerHTML = "卡号首字母必须不为0!";
+                } else if (parseInt(cno) < 1000000000) {
+                    S("err_cardno").innerHTML = "卡号不全为数字!";
+                }
+            }
+        }
+
+        function checkkey() {
+            var key1 = document.myform.key.value;
+            if (key1 === "" || key1 == null) {
+                S("err_key").innerHTML = "口令不能为空!";
+            } else if (key1.length < 8 || key1.length > 15) {
+                S("err_key").innerHTML = "口令长度不能小于8或大于15!";
+            }
+        }
+
+        function checkkey2() {
+            var key2 = document.myform.key2.value;
+            var key1 = document.myform.key.value;
+            if (key2 === "" || key2 == null) {
+                S("err_key2").innerHTML = "口令不能为空!";
+            } else if (key2.length < 8 || key2.length > 15) {
+                S("err_key2").innerHTML = "口令长度不能小于8或大于15!";
+            } else if (key2 !== key1) {
+                S("err_key2").innerHTML = "口令与二次口令不相同!";
+            }
+        }
+
+        function checkqqwx() {
+            var qqwx = document.myform.qqwx.value;
+            if (qqwx === "" || qqwx == null) {
+                S("err_qqwx").innerHTML = "微信号不能为空!";
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h3>校园办公系统认证页面</h3>
+    <form name="myform">
+        <table>
+            <tr>
+                <td rowspan="5"><img src="sfyz_2.jpg" alt="Image"></td>
+                <td id="td1">校园卡号：</td>
+                <td id="td2"><input type="text" name="cardno" onblur="checkcardno()"></td>
+                <td id="err_cardno"></td>
+            </tr>
+
+            <tr>
+                <td id="td1">口令：</td>
+                <td id="td2"><input type="password" name="key" onblur="checkkey()"></td>
+                <td id="err_key"></td>
+            </tr>
+
+            <tr>
+                <td id="td1">二次口令：</td>
+                <td id="td2"><input type="password" name="key2" onblur="checkkey2()"></td>
+                <td id="err_key2"></td>
+            </tr>
+
+            <tr>
+                <td id="td1">QQ/微信</td>
+                <td id="td2"><input type="text" name="qqwx" onblur="checkqqwx()"></td>
+                <td id="err_qqwx"></td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+
+</html>

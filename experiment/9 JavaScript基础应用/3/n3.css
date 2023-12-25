@@ -1,0 +1,15 @@
+
+fieldset {
+	background-color: #99ff99;
+	width: 300px;
+	height: 150px;
+	border: 8px ridge #3333cc;
+	margin: 10px auto;
+}
+legend {
+	color: #0000cc;
+}
+form {
+	margin: 20px;
+	padding: 20px;
+}

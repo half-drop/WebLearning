@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>简易福彩投注程序</title>
+    <style type="text/css">
+        div {
+            width: 450px;
+            height: 290px;
+            margin: 0 auto;
+            border: 2px solid #ff3300;
+        }
+        h2 {
+            font-size: 28px;
+            text-align: center;
+        }
+        td {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        input[type="text"] {
+            width: 150px;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        form{
+            margin: 0 auto;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="ico.jpg" alt="福彩标志">
+    <form>
+        <h2>简易福彩投注程序</h2>
+        <table>
+            <tr>
+                <td>彩票号码</td>
+                <td><input type="text" id="number1" readonly></td>
+                <td><input type="button" value="投注" onclick="selectNumber('number1')"></td>
+                <td rowspan="3">
+                    <input type="button" value="清空" onclick="clearNumbers()">
+                </td>
+            </tr>
+            <tr>
+                <td>彩票号码</td>
+                <td><input type="text" id="number2" readonly></td>
+                <td><input type="button" value="投注" onclick="selectNumber('number2')"></td>
+            </tr>
+            <tr>
+                <td>彩票号码</td>
+                <td><input type="text" id="number3" readonly></td>
+                <td><input type="button" value="投注" onclick="selectNumber('number3')"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function selectNumber(numId) {
+        var numbers = [];
+        while(numbers.length < 8) {
+            var num = Math.floor(Math.random() * 30) + 1;
+            if (!numbers.includes(num)) {
+                numbers.push(num);
+            }
+        }
+        document.getElementById(numId).value = numbers.sort((a, b) => a - b).map(n => n.toString().padStart(2, '0')).join(" ");
+    }
+
+    function clearNumbers() {
+        document.getElementById('number1').value = '';
+        document.getElementById('number2').value = '';
+        document.getElementById('number3').value = '';
+    }
+</script>
+</body>
+</html>

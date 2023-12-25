@@ -1,0 +1,17 @@
+p {
+    font: italic bolder 70px/1.5em 隶书;
+    background: rgba(100, 100, 100, 0.5);
+    margin: auto;
+}
+
+#div0 {
+    width: 800px;
+    height: 100px;
+    border: 20px outset #FF0000;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+body {
+    text-align: center;
+}

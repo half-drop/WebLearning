@@ -1,0 +1,9 @@
+* {margin: 0 auto;font-weight: bold;font-size: 28px;line-height: 1.5em;}
+#container {width: 900px;margin: 0 auto;}
+#header {height: 70px;background-color: #CCFFCC;margin-bottom: 8px;}
+#nav {height: 40px;background-color: #CCFFCC;margin-bottom: 8px;}
+#mainContent {height: 400px;}
+#main {width: 664px;height: 400px;float: left;background-color: #FFFF99;}
+#side {width: 228px;height: 400px;float: right;background-color: #FFCC99;}
+.clearFloat {clear: both;}
+#footer {height: 70px;background-color: #CCFFCC;border-top: 8px solid white;}

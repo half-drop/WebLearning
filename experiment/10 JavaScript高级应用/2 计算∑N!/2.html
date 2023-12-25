@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算∑N!</title>
+    <style>
+        fieldset {
+            margin: 20px auto;
+            width: 300px;
+            padding: 20px;
+            border: 2px outset #009966;
+        }
+
+        legend {
+            font-size: 28px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>计算∑N!</legend>
+        <script type="text/javascript">
+            var n = prompt("输入整数N:", 1);
+
+            if (n != null && n != "") {
+                var result = 1;
+                var sum = 0;
+
+                for (var i = 1; i <= n; i++) {
+                    result *= i;
+                    document.write("<br>" + i + "! = " + result);
+                    sum += result;
+                }
+
+                document.write("<br>阶乘的和 = " + sum);
+            }
+        </script>
+    </fieldset>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>福彩投注站投注助手</title>
+    <style type="text/css">
+        div {
+            background: url("fc_logo.jpg") right top no-repeat;
+            width: 550px;
+            height: 320px;
+            margin: 0 auto;
+            border: 2px solid #0077BB;
+            color: white;
+        }
+        h2 {
+            color: black;
+            font-size: 21px;
+            text-align: center;
+        }
+        select {
+            width: 300px;
+            height: 145px;
+        }
+        input {
+            width: 80px;
+            height: 40px;
+        }
+
+        table{
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="ico.jpg" alt="Logo">
+    <form>
+        <h2>福彩投注站投注彩票助手</h2>
+        <table>
+            <tr>
+                <td><input type="button" value="机选1注" onclick="selectNumber(1)"></td>
+                <td rowspan="3">
+                    <select id="number8" size="8"></select>
+                </td>
+                <td><input type="button" value="删除" onclick="delSelect()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="机选5注" onclick="selectNumber(5)"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="button" value="机选10注" onclick="selectNumber(10)"></td>
+                <td><input type="button" value="全部删除" onclick="delSelectAll()"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function S(id) {
+        return document.getElementById(id);
+    }
+
+    function selectNumber(n) {
+        var objSelect = S("number8");
+        for (var j = 0; j < n; j++) {
+            var number = [];
+            for (var i = 0; i < 7; i++) {
+                var tmp = Math.floor(Math.random() * 30 + 1);
+                if (tmp < 10) tmp = "0" + tmp;
+                while (number.includes(tmp)) {
+                    tmp = Math.floor(Math.random() * 30 + 1);
+                    if (tmp < 10) tmp = "0" + tmp;
+                }
+                number.push(tmp);
+            }
+            var list = number.join(" ");
+            var opt = document.createElement("option");
+            var optText = document.createTextNode(list);
+            opt.value = j;
+            opt.appendChild(optText);
+            objSelect.appendChild(opt);
+        }
+        objSelect.selectedIndex = objSelect.options.length - 1;
+    }
+
+    function delSelect() {
+        var objSelect = S("number8");
+        var selectedIndex = objSelect.selectedIndex;
+        if (selectedIndex != -1) {
+            objSelect.options.remove(selectedIndex);
+        } else {
+            alert("请先选择列表项后再删除!");
+        }
+    }
+
+    function delSelectAll() {
+        var objSelect = S("number8");
+        objSelect.innerHTML = "";
+    }
+</script>
+</body>
+</html>
